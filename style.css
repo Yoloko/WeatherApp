@@ -1,6 +1,7 @@
-.searcharea {
+text{
     background-color: #e6f2ff;
     padding: 20px;
+    float: right;
 }
 
 .uvindex {
@@ -30,7 +31,25 @@
     margin: 10px 0px;
 }
 
-#searchbtn{
-    padding: 6px 5px 0px 5px;
 
+.card {
+    float: left;
+    width: 25%;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 1px;
+    text-align: center;
 }
+.row {
+    margin: 0 -5px;
+}
+
+
+.searcharea {
+      margin-left: 57%;
+      float:right;
+  }
+
+.col {
+
+  }
