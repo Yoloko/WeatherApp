@@ -1,3 +1,20 @@
+#navbar{
+    color:white;
+    font-size: 20px;
+    
+}
+body{
+    font-family: 'Abril Fatface', cursive;
+    background-image: url("https://media0.giphy.com/media/3oEjHGZkrolm9UgvM4/giphy.gif");
+    
+
+}
+
+h3{
+    text-align: center;
+ 
+}
+
 text{
     background-color: #e6f2ff;
     padding: 20px;
@@ -9,6 +26,18 @@ text{
     flex-direction: row;
     justify-content: space-between;
     margin: 10px 0px;
+}
+.btnDanger{
+    background-color: red;
+
+}
+.btnmild{
+    background-color: yellow;
+
+}
+.btnNoDanger{
+    background-color: green;
+   
 }
 
 
@@ -26,7 +55,7 @@ text{
 
 
 .searcharea {
-      margin-left: 57%;
+      margin-left: 65%;
       float:right;
   }
 
