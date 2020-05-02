@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
-    $("#searchBtn").onclick = weatherTotal() {
+    $("#searchBtn").on("click"),function() {
         var searchVal = $("#citySearch").val();
         // searchWeather(searchVal);
         $("#citySearch").empty();
+       
 
 
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be&units=imperial";
@@ -59,9 +60,6 @@ $(document).ready(function () {
             }).then(function (response) {
                 $("#uvIndex5").append()
             })
-
-
-
 
 
     };
