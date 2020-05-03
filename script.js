@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    $("#searchBtn").on("click"),function() {
+    $("#searchBtn").on("click",function() {
         var searchVal = $("#citySearch").val();
-        // searchWeather(searchVal);
+          
         $("#citySearch").empty();
        
 
@@ -20,14 +20,24 @@ $(document).ready(function () {
             $("#humidity3").append(response.main.humidity)
             $("#windSpeed4").append(response.wind.speed)
             
-            getforcast(searchVal)
+            
 
         })
-
-
-        ajax({
+        
+        
+        $.ajax({
             type: "GET",
-            queryURL: "api.openweathermap.org/data/2.5/forecast?id" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be&units=imperial",
+            queryURL:"https://api.openweathermap.org/data/2.5/uvi?q=" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be",
+            dataType: "json",
+        }).then(function () {
+            $("#uvIndex5").append(value)
+        })
+       
+
+
+        $.ajax({
+            type: "GET",
+            queryURL: "api.openweathermap.org/data/2.5/forecast?id" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be",
             dataType: "json",
             success: function (data) {
                 $("#fiveday display").html()
@@ -53,14 +63,6 @@ $(document).ready(function () {
 
         });
 
-            ajax({
-                type: "GET",
-                queryURL: "https://api.openweathermap.org/data/2.5/uvi?" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be",
-                dataType: "json",
-            }).then(function (response) {
-                $("#uvIndex5").append()
-            })
 
-
-    };
+    });
 });
