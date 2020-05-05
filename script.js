@@ -25,28 +25,28 @@ $(document).ready(function () {
                 console.log(response)
                 var output = response.list[0]
                 $("#date1").html(output.dt_txt)
-                $("#hum1").html(output.main.humidity);
-                $("#temp1").html(output.main.temp);
+                $("#hum1").text(" Humidity "+ output.main.humidity);
+                $("#temp1").text("Temp" + output.main.temp);
 
                 var output = response.list[1]
                 $("#date2").html(output.dt_txt);
-                $("#hum2").text(" Hum "+ output.main.humidity);
+                $("#hum2").text(" Humidity "+ output.main.humidity);
                 $("#temp2").text(" Temp " + output.main.temp);
 
                 var output = response.list[9]
                 $("#date3").html(output.dt_txt);
-                $("#hum3").html(output.main.humidity);
-                $("#temp3").html(output.main.temp);
+                $("#hum3").html("humidity"+output.main.humidity);
+                $("#temp3").text("temp"+ output.main.temp);
 
                 var output = response.list[17]
-                $("#date4").html(output.dt_txt.indexOf("15:00:00"));
-                $("#hum4").text(output.main.humidity);
-                $("#temp4").text(output.main.temp);
+                $("#date4").html(output.dt_txt);
+                $("#hum4").text("humidity"+ output.main.humidity);
+                $("#temp4").text("temp"+ output.main.temp);
 
                 var output = response.list[24]
                 $("#date5").html(output.dt_txt.moment);
-                $("#hum5").text(output.main.humidity);
-                $("#temp5").text(output.main.temp);
+                $("#hum5").text("Humidity" + output.main.humidity);
+                $("#temp5").text("Temp"+ output.main.temp);
 
 
 
