@@ -30,16 +30,25 @@ $(document).ready(function () {
 
                 var output = response.list[1]
                 $("#date2").html(output.dt_txt);
-                $("#hum2").html(output.main.humidity);
-                $("#temp2").html(output.main.temp);
+                $("#hum2").text(" Hum "+ output.main.humidity);
+                $("#temp2").text(" Temp " + output.main.temp);
 
-                var output = response.list[16]
+                var output = response.list[9]
                 $("#date3").html(output.dt_txt);
                 $("#hum3").html(output.main.humidity);
                 $("#temp3").html(output.main.temp);
 
                 var output = response.list[17]
-                $("#date4").html(output.dt_txt)
+                $("#date4").html(output.dt_txt.indexOf("15:00:00"));
+                $("#hum4").text(output.main.humidity);
+                $("#temp4").text(output.main.temp);
+
+                var output = response.list[24]
+                $("#date5").html(output.dt_txt.moment);
+                $("#hum5").text(output.main.humidity);
+                $("#temp5").text(output.main.temp);
+
+
 
             })
 
