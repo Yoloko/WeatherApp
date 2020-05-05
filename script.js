@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: "GET",
             url: queryURL,
             dataType: "json",
-         }).then(function (response) {
+        }).then(function (response) {
             console.log(response)
 
             $("#location1").html(response.name)
@@ -21,21 +21,26 @@ $(document).ready(function () {
                 url: fiveDayurl,
                 type: "GET",
                 dataType: "json",
-             }).then(function (response) {
-                var len = response.list.length
-                for (let i=0; i<5; i++) {
-                    setTimeout(() => {
-                        var output = response.list[i]
-                        
-                        // var li = document.createElement("li");
-                        // var text = document.createTextNode(output.dt_txt);
-                        // li.appendChild(text);
-                        // document.getElementById("Temp1").appendChild(li);
+            }).then(function (response) {
+                console.log(response)
+                var output = response.list[0]
+                $("#date1").html(output.dt_txt)
+                $("#hum1").html(output.main.humidity);
+                $("#temp1").html(output.main.temp);
 
-                        $("#Temp1").html(output.dt_txt);
-                        $("#hum").html(output.main.humidity);
-                    }, i*1000);
-                }
+                var output = response.list[1]
+                $("#date2").html(output.dt_txt);
+                $("#hum2").html(output.main.humidity);
+                $("#temp2").html(output.main.temp);
+
+                var output = response.list[16]
+                $("#date3").html(output.dt_txt);
+                $("#hum3").html(output.main.humidity);
+                $("#temp3").html(output.main.temp);
+
+                var output = response.list[17]
+                $("#date4").html(output.dt_txt)
+
             })
 
         })
