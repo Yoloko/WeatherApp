@@ -1,9 +1,13 @@
 $(document).ready(function () {
 
+    var cityHistory = []
+
     $("#searchBtn").on("click", function () {
 
         var searchVal = $("#citySearch").val();
-        localStorage.setItem("searchVal", searchVal);
+        cityHistory.push(searchVal)
+        localStorage.setItem("totalSearch", cityHistory);
+        console.log(cityHistory)
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchVal + "&appid=1111c693bffa0cd8263c73cbe8fe55be&units=imperial";
 
         $.ajax({
@@ -28,7 +32,7 @@ $(document).ready(function () {
 
                 var output = response.list[1]
                 $("#date1").html(output.dt_txt)
-                $(".img").attr("src",output.weather[0].icon);
+                $(".img").attr("src", "http://openweathermap.org/img/wn/"+output.weather[0].icon+".png");
                 $("#hum1").text(" Humidity "+ output.main.humidity);
                 $("#temp1").text(" Temp " + output.main.temp);
 
